@@ -10,13 +10,13 @@
 <div id="container">
     <header>
     <div class="logotip">
-        <a href='index.php'><img src="/../img/logotip.png" alt="Логотип сайта" title="Магазин ноутбуков"></a>
+        <a href='/'><img src="/../img/logotip.png" alt="Логотип сайта" title="Магазин ноутбуков"></a>
     </div>
 </header>    <div class="leftblock">
         <nav>
     <div class="menu">
         <ul>
-            <li><a href="index.php">Главная</a></li>
+            <li><a href="/">Главная</a></li>
             <li><a href="/../product/index">Каталог</a></li>
 			<li><a id="numberInCart" href='/../cart/showCart'>Корзина <?=getQuantatiInCart()?></a></li>
      </ul>
@@ -33,39 +33,7 @@
 
                 </div>
     <footer>
-        <div class="footer-menu">
-    <div>
-        <h4>Category</h4>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Blog</a></li>
-        </ul>
-    </div>
-    <div>
-        <h4>Our Account</h4>
-        <ul>
-            <li><a href="#">Discount</a></li>
-            <li><a href="#">Addres</a></li>
-            <li><a href="#">Search</a></li>
-            <li><a href="#">Blog</a></li>
-        </ul>
-    </div>
-    <div>
-        <h4>Category</h4>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Blog</a></li>
-        </ul>
-    </div>
-    <div>
-        <h4>About Us</h4>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenea
-    </div>
-</div>
+ 
 <p>&copy; Все права защищены</p>    </footer>
 </div>
 
@@ -83,8 +51,8 @@
         }).done(
            (response) => {;
            let res = JSON.parse(response);
-           let resObj = res[0]['number'];
-           $('#numberInCart').text(`КОРЗИНА ${res}`)}
+           let resObj = res['number'];
+           $('#numberInCart').text(`КОРЗИНА ${resObj}`)}
           
         )
       })

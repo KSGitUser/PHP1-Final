@@ -10,7 +10,7 @@ addToCart($product_id);
 $quant = getQuantatiInCart();
 
 echo 
-  json_encode(["number: {$quant}"]);
+  json_encode(['number'=> $quant]);
 
 
 
