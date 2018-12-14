@@ -18,11 +18,7 @@
         <ul>
             <li><a href="index.php">Главная</a></li>
             <li><a href="/../product/index">Каталог</a></li>
-			<li><a href="news.php">Новости</a></li>
-            <li><a href="guestbook.php">Отзывы</a></li>
-            <li><a href="contacts.php">Контакты</a></li>
-			<li><a href='/../cart/showCart'>Корзина <?=getQuantatiInCart()?></a></li>
-            <li><a href='admin.php'>Админка</a></li>
+			<li><a id="numberInCart" href='/../cart/showCart'>Корзина <?=getQuantatiInCart()?></a></li>
      </ul>
     </div>
 </nav>    </div>
@@ -72,5 +68,27 @@
 </div>
 <p>&copy; Все права защищены</p>    </footer>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(function(){
+      $('#add_to_cart').on('click', function () {
+        let productId = $(this).data('id');
+        $.ajax({
+          url: "/cart/cart/",
+          type: "GET",
+          data: {
+            id: productId
+          }
+        }).done(
+           (response) => {;
+           let res = JSON.parse(response);
+           let resObj = res[0]['number'];
+           $('#numberInCart').text(`КОРЗИНА ${res}`)}
+          
+        )
+      })
+  })
+</script>
 </body>
 </html>

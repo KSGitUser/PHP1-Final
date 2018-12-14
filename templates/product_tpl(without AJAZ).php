@@ -5,9 +5,6 @@
   <?php endforeach;?>
   <p><?=$product['description']?></p>
   <p>Цена: <?=$product['price']?> рублей</p>
-  <button data-id="<?=$product['id']?>" id="add_to_cart">Добавить в корзину</button>
+  <a href="/cart/cart/?id=<?=$product['id']?>">Добавить в корзину</a>
 </div>
 
-
-
- 

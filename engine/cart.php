@@ -13,8 +13,6 @@ function addToCart($product_id)
     } else {
         $sql = "INSERT INTO cart (id, product_id, quantity, user_id) VALUES (null,{$validId}, 1, '{$userId}')";}
     execute($sql);
-    /*  INSERT INTO table_name (column1, column2, column3, ...)
-VALUES (value1, value2, value3, ...); */
 }
 
 function getQuantatiInCart()
